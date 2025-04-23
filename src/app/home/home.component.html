@@ -1,0 +1,72 @@
+<div class="weather-container">
+  <!-- Dropdown for city selection -->
+  <div class="city-dropdown">
+    <select
+    class="form-control mt-2 mb-3"
+    [(ngModel)]="selectedCity"
+    (ngModelChange)="getWeatherData(selectedCity)"
+    (ngModelChange)="gethourlyData(selectedCity)"
+    (ngModelChange)="getdayData(selectedCity)"
+    title="select sity"
+    >
+      <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+    </select>
+  </div>
+
+  <div class="location">
+    <h2 style="color: red;">{{ currentWeather?.dt_txt }}</h2>
+    <h2>{{ currentWeather1?.city.name }}, {{ currentWeather1?.city.country }}</h2>
+  </div>
+
+  <div class="main-info">
+    <img [src]="getIconUrl(currentWeather?.weather[0].icon)" alt="weather icon">
+    <div>
+      <h1>{{ currentWeather?.main.temp }}°C</h1>
+      <h3>{{ currentWeather?.main.weather }}</h3>
+      <p>Feels like: {{ currentWeather?.main.feels_like }}°C.
+        {{currentWeather?.weather[0].main}}.
+        {{currentWeather?.weather[0].description}}.
+      </p>
+    </div>
+  </div>
+
+  <div class="details-grid">
+    <div>Humidity: <strong>{{ currentWeather?.main.humidity }}%</strong></div>
+    <div>Pressure: <strong>{{ currentWeather?.main.pressure }} hPa</strong></div>
+    <div>Wind: <strong>{{ currentWeather?.wind.speed }} m/s</strong></div>
+    <div>Visibility: <strong>{{ currentWeather?.visibility / 1000 }} km</strong></div>
+    <div>Cloudiness: <strong>{{ currentWeather?.clouds.all }}%</strong></div>
+    <div>Sunrise: <strong>{{ currentWeather1?.city.sunrise * 1000 | date:'shortTime' }}</strong></div>
+    <div>Sunset: <strong>{{ currentWeather1?.city.sunset * 1000 | date:'shortTime' }}</strong></div>
+  </div>
+
+  <!-- maps -->
+  <app-weather-map [cityName]="selectedCity"></app-weather-map>
+
+  <!-- Hourly forecast -->
+  <div class="hourly-forecast mt-4">
+    <h4>Hourly Forecast</h4>
+    <div class="scroll-cards">
+      <div class="hour-card" *ngFor="let hour of hourlyForecast">
+        <p>{{ hour.dt_txt | date:'shortTime' }}</p>
+        <img [src]="getIconUrl(hour.weather[0].icon)" alt="icon">
+        <p>{{ hour.main.temp }}°C</p>
+        <p>{{ hour?.weather[0].main }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8-day forecast -->
+  <div class="6-day-forecast mt-4">
+    <h4>6-Day Forecast</h4>
+    <div class="scroll-cards">
+      <div class="hour-card" *ngFor="let day of daysForecast">
+        <p>{{ day.dt_txt | date:'EEEE, MMM d' }}</p>
+        <img [src]="getIconUrl(day.weather[0].icon)" alt="icon">
+        <p>{{ day.main.temp }}°C</p>
+        <p>{{ day?.weather[0].main }}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

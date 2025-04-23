@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-lg rounded-lg weather-card">
+        <div class="card-header text-center bg-primary gradient-header">
+          <h2 class="text-white">ამინდის პროგნოზი</h2>
+        </div>
+        <div class="card-body">
+          <input #cityInput type="text" class="form-control search-input mb-3" placeholder="შეიყვანეთ ქალაქი">
+          <button type="button" class="btn btn-light btn-block check-weather-btn" (click)="getWeather(cityInput)">
+            <i class="fas fa-search"></i> ამინდის შემოწმება
+          </button>
+
+          <div *ngIf="weatherData" class="mt-4 text-center weather-info">
+            <h4 class="city-name">{{ weatherData.name }}, {{ weatherData.sys.country }}</h4>
+            <img [src]="getIconUrl(weatherData.weather[0].icon)" alt="icon" class="weather-icon mb-3">
+            <h5 class="weather-description">{{ weatherData.weather[0].description }}</h5>
+            <h3 class="display-4 temperature">{{ weatherData.main.temp }}°C</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

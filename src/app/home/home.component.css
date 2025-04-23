@@ -1,0 +1,72 @@
+.weather-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.main-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-info img {
+  width: 100px;
+}
+
+.details-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.details-grid div {
+  width: 150px;
+}
+
+.scroll-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.hour-card {
+  min-width: 100px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f0f0f0;
+}
+
+.city-dropdown {
+  margin-top: 20px;
+}
+
+.scroll-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 10px;
+}
+
+.scroll-cards::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-cards::-webkit-scrollbar-thumb {
+  background-color: #90caf9;
+  border-radius: 4px;
+}
+
+.hour-card {
+  min-width: 140px; /* გაზარდე დღიური ამინდის ბარათებისთვის */
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: #333;
+  flex-shrink: 0;
+}

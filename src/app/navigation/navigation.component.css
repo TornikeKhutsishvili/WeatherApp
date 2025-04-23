@@ -1,0 +1,20 @@
+.navbar {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-dark {
+  background-color: #343a40;
+}
+
+.navbar-light {
+  background-color: #f8f9fa;
+}
+
+.rotate-on-hover {
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;  /* სატრანზიტო ეფექტი */
+}
+
+.rotate-on-hover:hover {
+  transform: rotate(360deg);  /* 360 გრადუსიანი დატრიალება */
+}

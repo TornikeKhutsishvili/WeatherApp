@@ -1,0 +1,112 @@
+/* General Card Styles */
+.weather-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header with Gradient */
+.gradient-header {
+  background: linear-gradient(135deg, #ff6f61, #f36d6d);
+  border-radius: 20px;
+  padding: 15px;
+}
+
+/* Search Input Field */
+.search-input {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+  transition: border 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #ff6f61;
+  box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+}
+
+/* Button Styling */
+.check-weather-btn {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 10px;
+  background: #ff6f61;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.check-weather-btn:hover {
+  background-color: #ff4d3e;
+}
+
+/* Weather Information */
+.weather-info {
+  padding-top: 10px;
+  animation: fadeIn 1s ease-out;
+}
+
+.city-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.weather-icon:hover {
+  transform: scale(1.1);
+}
+
+.weather-description {
+  color: #777;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.temperature {
+  font-size: 3rem;
+  color: #ff6f61;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card-body {
+    padding: 20px;
+  }
+
+  .weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .temperature {
+    font-size: 2.5rem;
+  }
+
+  .search-input {
+    font-size: 1.1rem;
+  }
+
+  .check-weather-btn {
+    font-size: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

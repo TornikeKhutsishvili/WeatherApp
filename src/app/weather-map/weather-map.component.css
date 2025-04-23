@@ -1,0 +1,17 @@
+#map {
+  width: 100% !important;
+  height: 250px !important;
+  min-height: 250px !important;
+  box-sizing: border-box !important;
+  margin-top: 20px !important;
+}
+
+/* responsiveness: when screen width is smaller than 500px */
+@media (max-width: 500px) {
+  #map {
+    width: 100% !important;
+    height: 200px !important;
+    min-height: 200px !important;
+    box-sizing: border-box !important;
+  }
+}
