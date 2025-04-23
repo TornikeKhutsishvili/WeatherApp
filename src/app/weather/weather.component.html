@@ -3,12 +3,12 @@
     <div class="col-md-6 col-lg-4">
       <div class="card shadow-lg rounded-lg weather-card">
         <div class="card-header text-center bg-primary gradient-header">
-          <h2 class="text-white">ამინდის პროგნოზი</h2>
+          <h2 class="text-white">Weather forecast</h2>
         </div>
         <div class="card-body">
-          <input #cityInput type="text" class="form-control search-input mb-3" placeholder="შეიყვანეთ ქალაქი">
+          <input #cityInput type="text" class="form-control search-input mb-3" placeholder="Enter the city">
           <button type="button" class="btn btn-light btn-block check-weather-btn" (click)="getWeather(cityInput)">
-            <i class="fas fa-search"></i> ამინდის შემოწმება
+            <i class="fas fa-search"></i> Checking the weather
           </button>
 
           <div *ngIf="weatherData" class="mt-4 text-center weather-info">

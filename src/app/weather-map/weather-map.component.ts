@@ -21,7 +21,6 @@ export class WeatherMapComponent implements AfterViewInit, OnChanges {
 
   private map!: L.Map;
   private apiKey = '62f76f7cea70bfb2a2f32587a893ecd9';
-
   private marker!: L.Marker;
 
   @Output() mapReady = new EventEmitter<L.Map>();
@@ -47,7 +46,7 @@ export class WeatherMapComponent implements AfterViewInit, OnChanges {
   private initMap(): void {
     // Remove existing map if already present
     if (this.map) {
-      this.map.remove();
+      return;
     }
 
     // Get the city coordinates using the OpenWeather API
@@ -129,9 +128,9 @@ export class WeatherMapComponent implements AfterViewInit, OnChanges {
 
       // Custom marker icon
       const customIcon = L.icon({
-        iconUrl: 'assets/leaflet/marker-icon.png',
-        iconRetinaUrl: 'assets/leaflet/marker-icon-2x.png',
-        shadowUrl: 'assets/leaflet/marker-shadow.png',
+        iconUrl: 'assets/marker-icon.png',
+        iconRetinaUrl: 'assets/marker-icon-2x.png',
+        shadowUrl: 'assets/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],

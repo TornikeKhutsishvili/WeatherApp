@@ -26,7 +26,12 @@ export class HomeComponent implements OnInit{
   mapInstance!: L.Map;
 
   cities: string[] = [
-    'Tbilisi', 'Rustavi', 'Batumi', 'Telavi', 'Kutaisi', 'Sokhumi', 'Mestia', 'Tskhinvali', 'Zugdidi', 'Ozurgeti'
+    'Tbilisi', 'Abasha', 'Adigeni', 'Akhalkalaki', 'Akhaltsikhe', 'Akhmeta', 'Ambrolauri', 'Aspindza', 'Baghdati',
+    'Batumi', 'Bolnisi', 'Borjomi', 'Chiatura', 'Chokhatauri', 'Dedoplistskaro', 'Dmanisi', 'Dusheti', 'Gardabani',
+    'Gori', 'Gurjaani', 'Kareli', 'Kaspi', 'Keda', 'Khashuri', 'Khelvachauri', 'Khobi', 'Khoni', 'Khulo', 'Kobuleti',
+    'Kutaisi', 'Lagodekhi', 'Lanchkhuti', 'Lentekhi', 'Marneuli', 'Martvili', 'Mestia', 'Mtskheta', 'Ninotsminda', 'Oni',
+    'Ozurgeti', 'Poti', 'Rustavi', 'Samtredia', 'Senaki', 'Sighnaghi', 'Sokhumi', 'Stepantsminda', 'Telavi', 'Terjola',
+    'Tetritskaro', 'Tkibuli', 'Tsageri', 'Tsalenjikha', 'Tsalka', 'Tskaltubo', 'Tskhinvali', 'Vani', 'Zestafoni', 'Zugdidi'
   ];
   selectedCity: string = 'Tbilisi';
 
