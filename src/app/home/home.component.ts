@@ -48,6 +48,8 @@ export class HomeComponent implements OnInit{
     this.weatherService.getWeather(city).subscribe((data: any) => {
       this.currentWeather = data.list[0];
       this.currentWeather1 = data;
+      console.log(this.currentWeather);
+      console.log(this.currentWeather1);
     });
   }
 

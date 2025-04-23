@@ -31,9 +31,8 @@
   </div>
 
   <div class="details-grid">
+    <div>population: <strong>{{ currentWeather1?.city.population }}</strong></div>
     <div>Humidity: <strong>{{ currentWeather?.main.humidity }}%</strong></div>
-    <div>Pressure: <strong>{{ currentWeather?.main.pressure }} hPa</strong></div>
-    <div>Wind: <strong>{{ currentWeather?.wind.speed }} m/s</strong></div>
     <div>Visibility: <strong>{{ currentWeather?.visibility / 1000 }} km</strong></div>
     <div>Cloudiness: <strong>{{ currentWeather?.clouds.all }}%</strong></div>
     <div>Sunrise: <strong>{{ currentWeather1?.city.sunrise * 1000 | date:'shortTime' }}</strong></div>

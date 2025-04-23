@@ -72,15 +72,13 @@ export class WeatherMapComponent implements AfterViewInit, OnChanges {
 
       // Overlay weather layers
       const overlays = {
-        Temperature: L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${this.apiKey}`),
-        Clouds: L.tileLayer(`https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=${this.apiKey}`),
         Pressure: L.tileLayer(`https://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=${this.apiKey}`),
         Wind: L.tileLayer(`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${this.apiKey}`),
       };
 
       // Layer controls
       L.control.layers({}, overlays).addTo(this.map);
-      overlays.Temperature.addTo(this.map);
+      overlays.Pressure.addTo(this.map);
 
       // Custom marker icon
       const customIcon = L.icon({
@@ -96,11 +94,8 @@ export class WeatherMapComponent implements AfterViewInit, OnChanges {
       // Display weather info
       const popupText = `
         <b>${data.name}</b><br>
-        🌡️ Temp: ${data.main.temp}°C<br>
-        ☁️ Clouds: ${data.clouds.all}%<br>
         💨 Wind: ${data.wind.speed} m/s<br>
         🌀 Pressure: ${data.main.pressure} hPa<br>
-        📃 ${data.weather[0].description}
       `;
       this.marker?.remove();  // Remove previous marker if exists
       this.marker = L.marker([coords.lat, coords.lon], { icon: customIcon })
@@ -140,11 +135,8 @@ export class WeatherMapComponent implements AfterViewInit, OnChanges {
       // Update weather info
       const popupText = `
         <b>${data.name}</b><br>
-        🌡️ Temp: ${data.main.temp}°C<br>
-        ☁️ Clouds: ${data.clouds.all}%<br>
         💨 Wind: ${data.wind.speed} m/s<br>
         🌀 Pressure: ${data.main.pressure} hPa<br>
-        📃 ${data.weather[0].description}
       `;
       this.marker?.remove();  // Remove previous marker if exists
       this.marker = L.marker([coords.lat, coords.lon], { icon: customIcon })
